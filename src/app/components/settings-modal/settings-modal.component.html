@@ -1,0 +1,54 @@
+<mat-dialog-content class="mat-typography modal-form">
+
+  <form [formGroup]="changeEmailForm" (ngSubmit)="changeEmail()">
+    <h2>Zmień email</h2>
+    <app-alert *ngIf="changeEmailFormServerError" text="Serwis czasowo niedostępny"
+               alertType="error"></app-alert>
+    <app-alert *ngIf="changeEmailFormSucceed" text="Udało sie zmienić email"
+               alertType="success"></app-alert>
+    <app-alert *ngIf="changeEmailFormEmailInUse" text="Email zajęty"
+               alertType="error"></app-alert>
+    <mat-form-field class="full-width" appearance="fill">
+      <mat-label>Nowy email</mat-label>
+      <input formControlName="newEmail" autocomplete="off" matInput>
+    </mat-form-field>
+    <mat-error *ngIf="newEmail?.errors?.required && changeEmailFormSubmitted">
+      Pole wymagane
+    </mat-error>
+    <mat-error
+      *ngIf="!newEmail?.errors?.required && newEmail?.errors?.email && changeEmailFormSubmitted">
+      Niepoprawny email
+    </mat-error>
+    <mat-dialog-actions>
+      <button type="submit" mat-flat-button color="primary">Zmień</button>
+    </mat-dialog-actions>
+  </form>
+
+  <form [formGroup]="changePasswordForm" (ngSubmit)="changePassword()">
+    <h2>Zmień hasło</h2>
+    <app-alert *ngIf="changePasswordFormServerError" text="Serwis czasowo niedostępny"
+               alertType="error"></app-alert>
+    <app-alert *ngIf="changePasswordFormWrongOldPassword" text="Stare hasło nieprawidłowe"
+               alertType="error"></app-alert>
+    <app-alert *ngIf="changePasswordFormSucceed" text="Udało się zmienić hasło"
+               alertType="success"></app-alert>
+    <mat-form-field class="full-width" appearance="fill">
+      <mat-label>Stare hasło</mat-label>
+      <input type="password" formControlName="oldPassword" autocomplete="off" matInput>
+    </mat-form-field>
+    <mat-error *ngIf="oldPassword?.errors?.required && changePasswordFormSubmitted">
+      Pole wymagane
+    </mat-error>
+    <mat-form-field class="full-width" appearance="fill">
+      <mat-label>Nowe hasło</mat-label>
+      <input type="password" formControlName="newPassword" autocomplete="off" matInput>
+    </mat-form-field>
+    <mat-error *ngIf="newPassword?.errors?.required && changePasswordFormSubmitted">
+      Pole wymagane
+    </mat-error>
+    <mat-dialog-actions>
+      <button type="submit" mat-flat-button color="primary">Zmień</button>
+    </mat-dialog-actions>
+  </form>
+</mat-dialog-content>
+

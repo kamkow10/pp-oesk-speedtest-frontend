@@ -1,1 +1,25 @@
 /* You can add global styles to this file, and also import other style files */
+
+* {
+  box-sizing: border-box;
+}
+
+html, body { height: 100%; }
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+  background-color: #c8c7c3;
+}
+
+.mat-dialog-content {
+  max-height: 80vh;
+}
+table {
+  width: 100%;
+  background-color: #f6f6f6;
+
+  thead tr {
+    background-color: #e3f4e3 !important;
+    font-weight: bold;
+  }
+}

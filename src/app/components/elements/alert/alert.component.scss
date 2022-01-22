@@ -1,0 +1,28 @@
+$alert-warning-bg: #fbffdb;
+$alert-warning-border: #c9c616;
+$alert-success-bg: #deffdf;
+$alert-success-border: #58c916;
+$alert-error-bg: #ffdede;
+$alert-error-border: #c91616;
+
+.alert-container {
+  border: 2px solid;
+  border-radius: 4px;
+  padding: 1rem;
+  margin-bottom: 2rem;
+
+  &.warning {
+    background-color: $alert-warning-bg;
+    border-color: $alert-warning-border;
+  }
+
+  &.success {
+    background-color: $alert-success-bg;
+    border-color: $alert-success-border;
+  }
+
+  &.error {
+    background-color: $alert-error-bg;
+    border-color: $alert-error-border;
+  }
+}

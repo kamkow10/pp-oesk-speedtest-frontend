@@ -1,0 +1,172 @@
+.basic-info {
+  position: absolute;
+  top: 1rem;
+  left: 1rem;
+  display: flex;
+  flex-direction: column;
+
+  & > div {
+    margin-bottom: 1rem;
+  }
+}
+
+nav {
+  width: 100%;
+  height: 110px;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  padding: 0 2rem;
+
+  .nav-buttons {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: flex-end;
+    height: 100%;
+
+    .button-register {
+      background-color: #bc7200;
+    }
+
+    .button-logout {
+      background-color: #bc3200;
+    }
+
+    .button-settings {
+      background-color: #8a8a8a;
+    }
+  }
+}
+
+.speed-test-container {
+  margin: 100px auto;
+  width: 70%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  .counter-container {
+    width: 90%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    margin-bottom: 2rem;
+
+    .counter {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+
+      .value {
+        font-size: 4rem;
+        height: 3rem;
+        text-align: center;
+      }
+
+      .mbps {
+        font-size: 1.5rem;
+        margin-bottom: 3rem;
+      }
+
+      .button-speed-test {
+        width: 220px;
+        height: 50px;
+        font-size: 1.5rem;
+        background-color: green;
+        margin-bottom: 1rem;
+
+        &:disabled {
+          background-color: #668066;
+        }
+      }
+
+      .button-show-history {
+        width: 220px;
+        height: 40px;
+        font-size: 1rem;
+        background-color: #8a8a8a;
+      }
+    }
+  }
+
+  .result-container {
+    width: 100%;
+    opacity: 0;
+    visibility: hidden;
+
+    &.visible {
+      visibility: visible;
+      opacity: 1;
+      transition: opacity 1s ease-in;
+    }
+
+    .results {
+      display: flex;
+      justify-content: space-evenly;
+      align-items: center;
+      width: 100%;
+      margin-bottom: 2rem;
+
+      .result {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        width: 20%;
+        padding: 1rem;
+        border-radius: 8px;
+        border: 1px solid black;
+        height: 180px;
+        justify-content: center;
+
+        & > div:first-of-type {
+          margin-bottom: 1rem;
+        }
+
+        .value {
+          font-size: 2rem;
+        }
+      }
+    }
+
+    .history-options {
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      margin-bottom: 2rem;
+
+      .button-save-to-history {
+        background-color: #8a8a8a;
+      }
+    }
+  }
+
+  .history {
+    width: 100%;
+
+    h2 {
+      font-size: 2rem;
+    }
+
+    table {
+      width: 100%;
+      background-color: #f6f6f6;
+      margin-bottom: 3rem;
+
+      thead tr {
+        background-color: #bbf5a2;
+      }
+    }
+
+    .history-table-container {
+      margin-bottom: 2rem;
+    }
+
+    .history-chart-container {
+      width: 60%;
+      margin: 0 auto;
+    }
+  }
+}
